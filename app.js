@@ -6,7 +6,9 @@ import TuitsController
   from "./controllers/tuits/tuits-controller.js";
 import cors from "cors";
 import mongoose from "mongoose";
-mongoose.connect('mongodb+srv://Dhanoo:WebDev2022@cluster0.ihyp89x.mongodb.net/?retryWrites=true&w=majority');
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING
+    || 'mongodb://localhost:27017/tuiter'
+mongoose.connect(CONNECTION_STRING)
 //'mongodb://localhost:27017/tuiter'
 //mongodb+srv://Dhanoo:<password>@cluster0.ihyp89x.mongodb.net/?retryWrites=true&w=majority
 const app = express();
